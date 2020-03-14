@@ -1,5 +1,6 @@
+package ru.mmsk.fastcounters.service;
+
 import org.junit.Test;
-import ru.mmsk.fastcounters.service.CounterService;
 
 import java.util.Comparator;
 import java.util.List;
