@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  app:
+    image: openjdk:11-jre
+    ports:
+      - "8081:8081"
+      - "5005:5005"
+    volumes:
+      - "./target:/app:rw"
+    entrypoint: ["java", "-Xdebug", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005", "-jar", "/app/fastcounters-1.0-SNAPSHOT.jar", "--server.port=8081"]
+    networks:
+      - fastcounters-net
+networks:
+  fastcounters-net:
+    driver: overlay
